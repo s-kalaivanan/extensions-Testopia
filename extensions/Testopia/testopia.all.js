@@ -9412,8 +9412,9 @@ Ext.extend(diff_tab_panel, Ext.TabPanel);
  */
 Testopia.Environment.Store = function(params, auto){
     params.ctype = 'json';
+    params.id = 'tr_list_environments.html';
     Testopia.Environment.Store.superclass.constructor.call(this, {
-        url: 'tr_list_environments.cgi',
+        url: 'page.cgi',
         listeners: {
             'exception': Testopia.Util.loadError
         },

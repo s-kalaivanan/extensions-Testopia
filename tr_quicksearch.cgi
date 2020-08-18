@@ -125,7 +125,7 @@ if ($term){
                     print "Location: " . Bugzilla->params->{'urlbase'} . "tr_environments.cgi?env_id=" . ${$table->list}[0]->id . "\n\n";
                 }
                 else{
-                    print "Location: " . Bugzilla->params->{'urlbase'} . "tr_list_environments.cgi?" . $table->get_query_part . "\n\n";
+                    print "Location: " . Bugzilla->params->{'urlbase'} . "page.cgi?id=tr_list_environments.html&" . $table->get_query_part . "\n\n";
                 }
                 
             }
