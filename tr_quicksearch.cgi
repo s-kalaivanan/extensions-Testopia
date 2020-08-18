@@ -76,12 +76,12 @@ if ($term){
                 $cgi->param('name', $text);
                 
                 my $search = Bugzilla::Extension::Testopia::Search->new($cgi);
-                my $table = Bugzilla::Extension::Testopia::Table->new('plan', 'tr_list_plans.cgi', $cgi, undef, $search->query);
+                my $table = Bugzilla::Extension::Testopia::Table->new('plan', 'page.cgi?id=tr_list_plans.html&', $cgi, undef, $search->query);
                 if ($table->list_count == 1){
                     print "Location: " . Bugzilla->params->{'urlbase'} . "tr_show_plan.cgi?plan_id=" . ${$table->list}[0]->id . "\n\n";
                 }
                 else{
-                    print "Location: " . Bugzilla->params->{'urlbase'} . "tr_list_plans.cgi?" . $table->get_query_part . "\n\n";
+                    print "Location: " . Bugzilla->params->{'urlbase'} . "page.cgi?id=tr_list_plans.html&" . $table->get_query_part . "\n\n";
                 }
                 
             }
